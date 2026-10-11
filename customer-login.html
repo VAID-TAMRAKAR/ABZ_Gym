@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABZ. - Member Portal Login. Access your training calendar, membership status, and coaching schedule.">
+  <title>Customer Login | ABZ.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page customer-theme">
+
+  <!-- Background Imagery -->
+  <div class="auth-background">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" 
+         alt="Gym atmosphere" 
+         class="auth-bg-img">
+    <div class="auth-bg-overlay"></div>
+  </div>
+
+  <div class="auth-wrapper">
+    <!-- Back to Home Bar -->
+    <header class="auth-top-nav">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="back-svg" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to ABZ. Homepage</span>
+      </a>
+
+      <!-- Theme Switcher -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Theme">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <main class="auth-card-container">
+      <div class="auth-glass-card customer-glass-card">
+        <div class="auth-header">
+          <div class="auth-brand">ABZ<span class="accent-dot">.</span></div>
+          <h1 class="auth-heading">WELCOME BACK</h1>
+          <p class="auth-subheading">Sign in to review workouts, bookings, and membership status.</p>
+        </div>
+
+        <form class="auth-form" id="customer-login-form" novalidate>
+          <div class="form-group">
+            <label for="cust-email" class="form-label">Email Address</label>
+            <input type="email" 
+                   id="cust-email" 
+                   name="email" 
+                   class="form-input" 
+                   placeholder="athlete@example.com" 
+                   autocomplete="email" 
+                   required>
+            <span class="field-error" id="cust-email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="cust-password" class="form-label">Password</label>
+              <button type="button" class="forgot-link-btn" id="open-forgot-dialog">Forgot password?</button>
+            </div>
+            <div class="password-wrapper">
+              <input type="password" 
+                     id="cust-password" 
+                     name="password" 
+                     class="form-input" 
+                     placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+                     autocomplete="current-password" 
+                     required>
+              <button type="button" class="pwd-toggle-btn" id="toggle-cust-pwd" aria-label="Show password">
+                <svg class="pwd-icon eye-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="pwd-icon eye-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" id="cust-password-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-options">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="cust-remember" name="remember" class="custom-checkbox">
+              <span class="checkbox-box"></span>
+              <span class="checkbox-text">Keep me signed in</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-auth-submit" id="cust-submit-btn">
+            <span>SIGN IN TO MEMBER PORTAL</span>
+          </button>
+
+          <div class="auth-feedback" id="customer-feedback" aria-live="polite"></div>
+        </form>
+
+        <div class="auth-secondary-actions">
+          <p>Don't have a membership yet? <button type="button" class="text-button" id="open-register-dialog">Create Account</button></p>
+        </div>
+
+        <div class="auth-footer-nav">
+          <span>Facility employee?</span>
+          <a href="admin-login.html" class="auth-text-link">Go to Admin Console</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal for Forgot Password / Create Account Demonstrations -->
+    <dialog class="auth-modal" id="auth-modal" aria-labelledby="modal-title">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+          <h3 id="modal-title" class="modal-heading">PASSWORD RESET</h3>
+          <button type="button" class="modal-close-btn" id="close-modal" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-description" class="modal-text">Enter your registered email address and we'll dispatch a secure recovery link.</p>
+          <div class="form-group">
+            <label for="modal-input" class="form-label" id="modal-label">Email Address</label>
+            <input type="email" id="modal-input" class="form-input" placeholder="athlete@example.com">
+            <span class="field-error" id="modal-error"></span>
+          </div>
+          <div class="modal-feedback" id="modal-feedback"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="modal-confirm">Confirm Action</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="auth-simple-footer">
+      <p>&copy; <span class="current-year">2026</span> ABZ. Made by Ved.</p>
+    </footer>
+  </div>
+
+  <script src="customer-login.js"></script>
+</body>
+</html>

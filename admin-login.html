@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABZ. - Administrative Console Gateway. Restricted to authorized operations staff.">
+  <title>Admin Console | ABZ.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page admin-theme">
+
+  <!-- Background Imagery with Dark Heavy Overlay -->
+  <div class="auth-background">
+    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1920&auto=format&fit=crop" 
+         alt="Dark gym weight rack" 
+         class="auth-bg-img">
+    <div class="auth-bg-overlay"></div>
+  </div>
+
+  <div class="auth-wrapper">
+    <!-- Quick Back to Home Link -->
+    <header class="auth-top-nav">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="back-svg" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to ABZ. Homepage</span>
+      </a>
+
+      <!-- Theme Switcher -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Theme">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <main class="auth-card-container">
+      <div class="auth-glass-card admin-glass-card">
+        <div class="card-badge admin-badge">
+          <span class="admin-badge-icon">&bull;</span>
+          <span>RESTRICTED ACCESS</span>
+        </div>
+
+        <div class="auth-header">
+          <div class="auth-brand">ABZ<span class="accent-dot">.</span></div>
+          <h1 class="auth-heading">ADMIN CONSOLE</h1>
+          <p class="auth-subheading">Authorized staff & facility operators only.</p>
+        </div>
+
+        <form class="auth-form" id="admin-login-form" novalidate>
+          <div class="form-group">
+            <label for="admin-identifier" class="form-label">Admin Email or Operator ID</label>
+            <input type="text" 
+                   id="admin-identifier" 
+                   name="identifier" 
+                   class="form-input" 
+                   placeholder="operator@abzgym.com" 
+                   autocomplete="username" 
+                   required>
+            <span class="field-error" id="identifier-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="admin-password" class="form-label">Access Passcode</label>
+            <div class="password-wrapper">
+              <input type="password" 
+                     id="admin-password" 
+                     name="password" 
+                     class="form-input" 
+                     placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+                     autocomplete="current-password" 
+                     required>
+              <button type="button" class="pwd-toggle-btn" id="toggle-admin-pwd" aria-label="Show password">
+                <svg class="pwd-icon eye-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="pwd-icon eye-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" id="password-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-options">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="admin-remember" name="remember" class="custom-checkbox">
+              <span class="checkbox-box"></span>
+              <span class="checkbox-text">Trust this authorized device</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-auth-submit" id="admin-submit-btn">
+            <span>ENTER ADMIN PORTAL</span>
+          </button>
+
+          <div class="auth-feedback" id="admin-feedback" aria-live="polite"></div>
+        </form>
+
+        <!-- Explicit Security Notice -->
+        <div class="security-disclaimer">
+          <div class="disclaimer-title">DEVELOPMENT SECURITY NOTICE</div>
+          <p class="disclaimer-text">
+            This frontend interface demonstrates validation and state handling. Production deployment requires an authenticated backend with encrypted HTTPS sessions, password hashing (e.g. Argon2/bcrypt), and role-based access control.
+          </p>
+        </div>
+
+        <div class="auth-footer-nav">
+          <span>Need customer account access?</span>
+          <a href="customer-login.html" class="auth-text-link">Go to Customer Portal</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="auth-simple-footer">
+      <p>&copy; <span class="current-year">2026</span> ABZ. Industrial Strength. Made by Ved.</p>
+    </footer>
+  </div>
+
+  <script src="admin-login.js"></script>
+</body>
+</html>

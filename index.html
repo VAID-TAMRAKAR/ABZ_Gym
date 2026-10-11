@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABZ. - High-performance gym, strength training facility, and elite personal coaching. Built through discipline, engineered for results.">
+  <title>ABZ. | High Performance & Strength Gym</title>
+
+  <!-- Google Fonts: Syne (Condensed display) & Plus Jakarta Sans (Clean body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Backdrop overlay for slide-in drawer -->
+  <div class="panel-overlay" id="panel-overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Slide-in Compact Glass Side Panel -->
+  <aside class="side-panel" id="side-panel" aria-label="Portal Navigation" aria-hidden="true">
+    <div class="panel-header">
+      <span class="brand-mark">ABZ<span class="accent-dot">.</span></span>
+      <button class="panel-close-btn" id="close-panel" aria-label="Close navigation panel">&times;</button>
+    </div>
+    
+    <div class="panel-tagline">
+      <span class="pulse-indicator" aria-hidden="true"></span>
+      <span>SYSTEM PORTALS</span>
+    </div>
+
+    <nav class="panel-nav">
+      <ul class="panel-links">
+        <li><a href="#hero" class="panel-link">Home</a></li>
+        <li><a href="#about" class="panel-link">About ABZ.</a></li>
+        <li><a href="#training" class="panel-link">Training</a></li>
+        <li><a href="#facilities" class="panel-link">Facilities</a></li>
+        <li><a href="#membership" class="panel-link">Memberships</a></li>
+        <li><a href="#contact" class="panel-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="panel-actions">
+      <div class="panel-action-label">AUTHENTICATION GATEWAY</div>
+      <a href="customer-login.html" class="btn btn-panel btn-panel-customer">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Customer Login</span>
+      </a>
+      <a href="admin-login.html" class="btn btn-panel btn-panel-admin">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Admin Console</span>
+      </a>
+    </div>
+
+    <div class="panel-footer">
+      <p class="panel-copy">ABZ. ATHLETIC SYSTEMS &copy; <span class="current-year">2026</span></p>
+    </div>
+  </aside>
+
+  <!-- Sticky Glass Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="nav-left">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open side navigation" aria-expanded="false" aria-controls="side-panel">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a href="#hero" class="navbar-brand">ABZ<span class="accent-dot">.</span></a>
+      </div>
+
+      <ul class="nav-shortcuts" id="nav-shortcuts">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#membership" class="nav-link">Membership</a></li>
+        <li><a href="#training" class="nav-link">Training</a></li>
+        <li><a href="#facilities" class="nav-link">Facilities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle Theme">
+          <!-- Sun Icon (Active in Dark Mode) -->
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (Active in Light Mode) -->
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero" aria-label="Hero Showcase">
+    <div class="hero-bg-media">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" 
+           alt="Athlete performing strength training under dramatic gym lighting" 
+           class="hero-image" 
+           loading="eager" 
+           fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content container">
+      <div class="eyebrow-pill reveal">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-text">BUILT THROUGH DISCIPLINE</span>
+      </div>
+
+      <h1 class="hero-title reveal">
+        <span>NO EXCUSES.</span>
+        <span class="highlight-text">JUST RESULTS.</span>
+      </h1>
+
+      <p class="hero-description reveal">
+        Train harder. Move stronger. Become unstoppable. Your next level starts at ABZ.
+      </p>
+
+      <div class="hero-cta-group reveal">
+        <a href="#membership" class="btn btn-primary">
+          <span>JOIN ABZ.</span>
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#facilities" class="btn btn-secondary">EXPLORE THE GYM</a>
+      </div>
+
+      <!-- Floating Glass Motivational Card -->
+      <div class="hero-glass-badge reveal">
+        <div class="badge-status">
+          <span class="status-pulse"></span>
+          <span class="badge-title">STANDARD OF CONDUCT</span>
+        </div>
+        <p class="badge-quote">"Motivation gets you started. Unbroken discipline keeps you progressing."</p>
+      </div>
+    </div>
+
+    <!-- Animated Scroll Indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down to About section">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">PHILOSOPHY & ETHOS</span>
+        <h2 class="section-title">MORE THAN A GYM.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-column reveal">
+          <p class="about-lead">
+            ABZ. is an industrial training ground built for athletes, lifters, and individuals who reject mediocrity. We combine uncompromising standards, biomechanically superior equipment, and a culture centered purely on tangible progress.
+          </p>
+          <p class="about-body">
+            No gimmicks, no trend-chasing, and zero compromises. Whether you are stepping up to a barbell for the first time or executing advanced periodized cycles, ABZ. delivers the structure, intensity, and guidance required to unlock your potential.
+          </p>
+
+          <div class="principles-grid">
+            <div class="principle-card">
+              <span class="principle-number">01</span>
+              <h3 class="principle-title">Uncompromising Discipline</h3>
+              <p class="principle-desc">Consistency over convenience. We prioritize sustained effort over transient motivation.</p>
+            </div>
+            <div class="principle-card">
+              <span class="principle-number">02</span>
+              <h3 class="principle-title">Structured Execution</h3>
+              <p class="principle-desc">Every movement, split, and recovery cycle follows proven strength principles.</p>
+            </div>
+            <div class="principle-card">
+              <span class="principle-number">03</span>
+              <h3 class="principle-title">Progress-Driven Community</h3>
+              <p class="principle-desc">An environment populated by athletes focused on self-mastery and mutual accountability.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-media-column reveal">
+          <div class="glass-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" 
+                 alt="Barbell athlete preparing for a heavy lift" 
+                 loading="lazy">
+            <div class="glass-overlay-metric">
+              <span class="metric-accent">PURE STRENGTH</span>
+              <span class="metric-caption">Industrial Standards &bull; Zero Fluff</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Offerings Section -->
+  <section class="section training-section" id="training">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">PERFORMANCE DISCIPLINES</span>
+        <h2 class="section-title">TRAINING PROTOCOLS.</h2>
+        <p class="section-subtitle">Engineered programs designed to build resilient muscle, peak aerobic stamina, and movement mastery.</p>
+      </div>
+
+      <div class="editorial-grid">
+        <!-- Item 1: Strength -->
+        <article class="editorial-card card-large reveal">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop" 
+               alt="Heavy barbell plate rack" 
+               class="editorial-bg" 
+               loading="lazy">
+          <div class="editorial-content">
+            <div class="editorial-badge">STRENGTH & WEIGHT TRAINING</div>
+            <h3 class="editorial-headline">Heavy Iron & Olympic Platforms</h3>
+            <p class="editorial-summary">Calibrated steel plates, competitive squat racks, and dedicated deadlift stations engineered for raw progression.</p>
+          </div>
+        </article>
+
+        <!-- Item 2: Functional -->
+        <article class="editorial-card card-compact reveal">
+          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop" 
+               alt="Functional turf training sled" 
+               class="editorial-bg" 
+               loading="lazy">
+          <div class="editorial-content">
+            <div class="editorial-badge">FUNCTIONAL ATHLETICISM</div>
+            <h3 class="editorial-headline">Turf & Conditioning Sleds</h3>
+            <p class="editorial-summary">Dynamic movement spaces engineered for agility, sled pushes, plyometrics, and kettlebell circuits.</p>
+          </div>
+        </article>
+
+        <!-- Item 3: Personal Training -->
+        <article class="editorial-card card-compact reveal">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" 
+               alt="Personal trainer coaching client with proper form" 
+               class="editorial-bg" 
+               loading="lazy">
+          <div class="editorial-content">
+            <div class="editorial-badge">ONE-ON-ONE</div>
+            <h3 class="editorial-headline">Personal Strength Coaching</h3>
+            <p class="editorial-summary">Targeted periodization, biomechanical analysis, and progressive overload protocols with seasoned coaches.</p>
+          </div>
+        </article>
+
+        <!-- Item 4: Group Conditioning -->
+        <article class="editorial-card card-large reveal">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop" 
+               alt="Athletes performing synchronized group training" 
+               class="editorial-bg" 
+               loading="lazy">
+          <div class="editorial-content">
+            <div class="editorial-badge">HIGH-OUTPUT</div>
+            <h3 class="editorial-headline">Group Conditioning Sessions</h3>
+            <p class="editorial-summary">Structured metabolic intervals and high-output circuits built to challenge cardiovascular grit alongside teammates.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section facilities-section" id="facilities">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">INFRASTRUCTURE</span>
+        <h2 class="section-title">THE TRAINING FLOOR.</h2>
+        <p class="section-subtitle">Industrial spatial design optimized for clean traffic flow, heavy loads, and rapid recovery.</p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-box reveal">
+          <div class="facility-image-wrap">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Cardio conditioning equipment line" 
+                 loading="lazy">
+          </div>
+          <div class="facility-details">
+            <h3 class="facility-name">High-Density Cardio Deck</h3>
+            <p class="facility-desc">Curved non-motorized treadmills, air bikes, water rowers, and ski ergs calibrated for aerobic conditioning.</p>
+            <ul class="facility-specs">
+              <li>Air Resistance Bikes</li>
+              <li>Curve Treadmills</li>
+              <li>Concept2 Row & Ski</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="facility-box reveal">
+          <div class="facility-image-wrap">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Recovery and mobility area" 
+                 loading="lazy">
+          </div>
+          <div class="facility-details">
+            <h3 class="facility-name">Recovery & Mobility Suite</h3>
+            <p class="facility-desc">Contrast therapy, pneumatic compression, and foam roll mobility stations to fast-track central nervous system repair.</p>
+            <ul class="facility-specs">
+              <li>Percussive Therapy Units</li>
+              <li>Targeted Foam & Band Racks</li>
+              <li>Thermal Decompression</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Plans Section -->
+  <section class="section membership-section" id="membership">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">COMMITMENT OPTIONS</span>
+        <h2 class="section-title">CHOOSE YOUR PROTOCOL.</h2>
+        <p class="section-subtitle">Straightforward, transparent tiers. Pricing shown as configurable placeholders.</p>
+      </div>
+
+      <div class="plans-grid">
+        <!-- Tier 1: STARTER -->
+        <div class="pricing-card reveal">
+          <div class="card-tier">STARTER</div>
+          <div class="card-price">
+            <span class="currency">$</span>
+            <span class="amount">49</span>
+            <span class="billing">/ mo</span>
+          </div>
+          <p class="plan-summary">Essential floor access for independent lifters seeking top-grade equipment.</p>
+          
+          <ul class="plan-features">
+            <li>Full main gym floor access</li>
+            <li>Standard locker room & shower amenities</li>
+            <li>Initial fitness orientation session</li>
+            <li>Mobile app keycard access</li>
+          </ul>
+
+          <a href="customer-login.html?plan=starter" class="btn btn-card">Choose Starter</a>
+        </div>
+
+        <!-- Tier 2: PRO (Featured) -->
+        <div class="pricing-card featured reveal">
+          <div class="featured-badge">MOST POPULAR</div>
+          <div class="card-tier">PRO</div>
+          <div class="card-price">
+            <span class="currency">$</span>
+            <span class="amount">89</span>
+            <span class="billing">/ mo</span>
+          </div>
+          <p class="plan-summary">Extended training access with personalized coaching support and group conditioning.</p>
+          
+          <ul class="plan-features">
+            <li>24/7 unlimited facility access</li>
+            <li>Full functional turf & Olympic platform access</li>
+            <li>2 Personal Training sessions per month</li>
+            <li>Access to weekly high-output group classes</li>
+            <li>Recovery zone basic access</li>
+          </ul>
+
+          <a href="customer-login.html?plan=pro" class="btn btn-primary btn-featured">Choose Pro</a>
+        </div>
+
+        <!-- Tier 3: ELITE -->
+        <div class="pricing-card reveal">
+          <div class="card-tier">ELITE</div>
+          <div class="card-price">
+            <span class="currency">$</span>
+            <span class="amount">149</span>
+            <span class="billing">/ mo</span>
+          </div>
+          <p class="plan-summary">The total high-performance experience. Complete access, priority coaching, and recovery.</p>
+          
+          <ul class="plan-features">
+            <li>24/7 all-access, zero restrictions</li>
+            <li>Weekly 1-on-1 personal coaching session</li>
+            <li>Full recovery suite (Compression & thermal)</li>
+            <li>Custom nutrition & training periodization plan</li>
+            <li>2 Monthly guest access passes</li>
+          </ul>
+
+          <a href="customer-login.html?plan=elite" class="btn btn-card">Choose Elite</a>
+        </div>
+      </div>
+
+      <p class="pricing-disclaimer reveal">
+        * Plan rates and inclusions are configurable templates. Contact the front desk for localized annual contract rates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Choose ABZ. Section -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">THE ADVANTAGE</span>
+        <h2 class="section-title">WHY TRAIN AT ABZ.</h2>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card reveal">
+          <div class="reason-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="reason-svg" aria-hidden="true">
+              <path d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </div>
+          <h3 class="reason-heading">Zero Crowding Fluff</h3>
+          <p class="reason-text">Capped membership capacity ensures you never waste time waiting for squat cages or platforms.</p>
+        </div>
+
+        <div class="reason-card reveal">
+          <div class="reason-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="reason-svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="reason-heading">Calibrated Hardware</h3>
+          <p class="reason-text">Machined weight plates, competition-spec bars, and heavy-duty structural steel racks built for lifters.</p>
+        </div>
+
+        <div class="reason-card reveal">
+          <div class="reason-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="reason-svg" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="reason-heading">Focused Community</h3>
+          <p class="reason-text">Train alongside peers who share your respect for consistent effort, safety, and athletic progression.</p>
+        </div>
+
+        <div class="reason-card reveal">
+          <div class="reason-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="reason-svg" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="reason-heading">Certified Coaches</h3>
+          <p class="reason-text">Direct access to strength coaches who assess your movement mechanics and guide periodized plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">COMMUNICATIONS</span>
+        <h2 class="section-title">GET IN TOUCH.</h2>
+        <p class="section-subtitle">Reach out for facility tours, membership inquiries, or coaching appointments.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-panel reveal">
+          <div class="info-block">
+            <h3 class="info-label">HEADQUARTERS LOCATION</h3>
+            <p class="info-value">104 Ironforge Way, Industrial Quarter<br>Metro City, MC 98210</p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-label">PHONE & DIRECT LINE</h3>
+            <p class="info-value">+1 (555) 019-2834</p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-label">OFFICIAL INQUIRIES</h3>
+            <p class="info-value">contact@abzgym.com</p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-label">FACILITY HOURS</h3>
+            <p class="info-value">
+              Monday – Friday: 05:00 – 23:00<br>
+              Saturday – Sunday: 06:00 – 21:00<br>
+              <span class="highlight-text">PRO & ELITE Members: 24/7 Keycard Access</span>
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-label">CONNECT</h3>
+            <div class="social-links">
+              <a href="#hero" class="social-pill" aria-label="ABZ Instagram">Instagram</a>
+              <a href="#hero" class="social-pill" aria-label="ABZ YouTube">YouTube</a>
+              <a href="#hero" class="social-pill" aria-label="ABZ X/Twitter">X / Twitter</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-panel reveal">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Vance" required>
+              <span class="field-error" id="name-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. alex@example.com" required>
+              <span class="field-error" id="email-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Inquiry Subject</label>
+              <select id="contact-subject" name="subject" class="form-input" required>
+                <option value="">Select subject topic...</option>
+                <option value="membership">Membership Registration</option>
+                <option value="coaching">Personal Coaching Inquiry</option>
+                <option value="tour">Facility Tour Scheduling</option>
+                <option value="other">General Question</option>
+              </select>
+              <span class="field-error" id="subject-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message Details</label>
+              <textarea id="contact-message" name="message" rows="4" class="form-input" placeholder="Tell us about your fitness objectives or questions..." required></textarea>
+              <span class="field-error" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              <span>SEND INQUIRY</span>
+            </button>
+
+            <div class="form-status" id="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refined Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-column">
+          <a href="#hero" class="footer-brand">ABZ<span class="accent-dot">.</span></a>
+          <p class="footer-tagline">Forged through discipline. Engineered for human performance.</p>
+        </div>
+
+        <div class="footer-nav-column">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-column">
+          <h4 class="footer-title">Member Gateways</h4>
+          <ul class="footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="admin-login.html">Admin Console</a></li>
+            <li><a href="#membership">Join Protocol</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-column">
+          <h4 class="footer-title">Location</h4>
+          <p class="footer-plain-text">104 Ironforge Way<br>Metro City, MC 98210<br>contact@abzgym.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span class="current-year">2026</span> ABZ. All rights reserved.</p>
+        <!-- Mandatory credit line -->
+        <p class="footer-author">Made by Ved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Glass Banner -->
+  <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie preferences" hidden>
+    <div class="cookie-content">
+      <div class="cookie-text-wrap">
+        <h4 class="cookie-title">COOKIE NOTICE</h4>
+        <p class="cookie-text">We use cookies to improve your browsing experience and remember your preferences.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button type="button" class="btn btn-cookie-accept" id="cookie-accept">Accept</button>
+        <button type="button" class="btn btn-cookie-deny" id="cookie-deny">Deny</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="main.js"></script>
+</body>
+</html>
